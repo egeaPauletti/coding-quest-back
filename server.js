@@ -1,19 +1,19 @@
-import express from "express";
-import cors from "cors";
-import dotenv from "dotenv";
+const express = require("express");
+const path = require("path");
+require("dotenv").config();
 
-dotenv.config();
+const chatRoute = require("./routes/chat");
 
 const app = express();
-const port = process.env.PORT || 3000;
+const cors = require("cors");
 
-app.use(cors());
 app.use(express.json());
+app.use(express.static(path.join(__dirname, "public")));
+app.use(cors());
 
-app.get("/", (req, res) => {
-  res.send("Backend");
-});
+app.use("/api/chat", chatRoute);
 
-app.listen(port, () => {
-  console.log(`Server running! port: ${port} 🚀`);
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Servidor rodando em http://localhost:${PORT}`);
 });
