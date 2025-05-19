@@ -1,6 +1,5 @@
-const axios = require("axios");
-
-async function sendPromptToOpenAI(prompt) {
+import axios from "axios";
+export default async function sendPromptToOpenAI(prompt) {
   const apiKey = process.env.OPENAI_API_KEY;
 
   const response = await axios.post(
@@ -21,4 +20,3 @@ async function sendPromptToOpenAI(prompt) {
   return response.data.choices[0].message.content.trim();
 }
 
-module.exports = { sendPromptToOpenAI };
