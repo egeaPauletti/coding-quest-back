@@ -1,8 +1,9 @@
-const express = require("express");
-const router = express.Router();
-const { sendPromptToOpenAI } = require("../services/openAiService");
+import express from "express";
+import sendPromptToOpenAI from "../services/openAiService.js";
 
-router.post("/", async (req, res) => {
+const chatRouter = express.Router();
+
+chatRouter.post("/", async (req, res) => {
   const { prompt } = req.body;
 
   try {
@@ -13,4 +14,4 @@ router.post("/", async (req, res) => {
   }
 });
 
-module.exports = router;
+export default chatRouter
