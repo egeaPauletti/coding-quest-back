@@ -9,7 +9,7 @@ export default async function loginUser(req, res){
     
     const existsUser = await prisma.user.findUnique({
       where: { 
-        email: data.email
+        name: data.name
       }
     })
     console.log(existsUser);
@@ -18,7 +18,7 @@ export default async function loginUser(req, res){
     if(!existsUser){
       return res.status(401).json({
         success: false,
-        message: 'Email não existe'
+        message: 'Nome não existe'
       });
     }
     

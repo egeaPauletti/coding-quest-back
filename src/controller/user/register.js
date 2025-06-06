@@ -16,16 +16,16 @@ export default async function registerUser(req, res){
     const hashedPass = await bcrypt.hash(data.password, 10);
 
     const existsUser = await prisma.user.findUnique({
-      where: { email: data.email }
+      where: { name: data.name }
     });
 
     if(existsUser){
-      throw new ConflictError('Email já existe');
+      throw new ConflictError('name já existe');
     }
 
     const newUser = await prisma.user.create({
       data: {
-        email: data.email,
+        name: data.name,
         password: hashedPass
       }
     });
