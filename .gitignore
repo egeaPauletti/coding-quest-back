@@ -188,3 +188,5 @@ temp/
 .cache/
 .cache-loader/
 bower_components/
+
+/src/generated
