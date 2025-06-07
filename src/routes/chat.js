@@ -8,7 +8,7 @@ chatRouter.post("/", async (req, res) => {
 
   try {
     const response = await sendPromptToOpenAI(prompt);
-    res.send(`<p>${response}</p>`);
+    res.send(`${response}`);
   } catch (error) {
     res.status(500).send(`<p>Erro ao gerar resposta da IA.</p>`);
   }

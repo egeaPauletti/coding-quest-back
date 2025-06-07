@@ -14,4 +14,8 @@ app.use(cors());
 app.use("/api/chat", chatRouter);
 app.use("/api/user", userRouter);
 
+app.get("/", (req, res) => {
+  res.send("API está rodando! 🚀");
+});
+
 export default app
