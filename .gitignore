@@ -1,192 +1,56 @@
-# Geral
-.DS_Store
-Thumbs.db
-ehthumbs.db
-Icon?
-Desktop.ini
+# compiled output
+/dist
+/node_modules
+/build
+
+# Logs
+logs
 *.log
-*.tmp
-*.swp
-*.bak
-*.old
-*.orig
-
-# Git
-*.orig
-*.rej
-*.swo
-*.swn
-*.swn
-*.swo
-*.patch
-*.diff
-*.cache
-
-# Arquivos de backup de editores
-*~
-*.#
-.#*
-
-# Editor: VS Code
-.vscode/
-.history/
-
-# Editor: JetBrains
-.idea/
-*.iml
-*.iws
-out/
-
-# Node.js
-node_modules/
 npm-debug.log*
+pnpm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-.pnpm-debug.log*
+lerna-debug.log*
 
-# Python
-__pycache__/
-*.py[cod]
-*.pyo
-*.pyd
-*.pyc
-*.pdb
-*.egg
-*.egg-info/
-dist/
-build/
-*.spec
+# OS
+.DS_Store
+
+# Tests
+/coverage
+/.nyc_output
+
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# dotenv environment variable files
 .env
-.venv/
-venv/
-ENV/
+.env.development.local
+.env.test.local
+.env.production.local
+.env.local
 
-# Java
-*.class
-*.jar
-*.war
-*.ear
-*.db
-*.sqlite
-target/
-bin/
-build/
+# temp directory
+.temp
+.tmp
 
-# .NET / C#
-*.dll
-*.exe
-*.pdb
-*.mdb
-*.log
-*.suo
-*.user
-*.userosscache
-*.sln.docstates
-*.vspscc
-*.vssscc
-.vs/
-obj/
-bin/
-TestResults/
-
-# Ruby
-*.gem
-*.rbc
-.bundle/
-log/
-tmp/
-db/*.sqlite3
-db/*.sqlite3-journal
-coverage/
-spec/reports/
-spec/examples.txt
-
-# Go
-*.exe
-*.test
-*.out
-
-# Rust
-target/
-**/*.rs.bk
-
-# PHP
-vendor/
-composer.lock
-
-# JavaScript / TypeScript
-lib/
-dist/
-coverage/
-jspm_packages/
-.eslintcache
-*.tsbuildinfo
-
-# Docker
+# Runtime data
+pids
 *.pid
 *.seed
 *.pid.lock
-*.sock
-*.envrc
-.env.*
-.dockerignore
 
-# Terraform
-*.tfstate
-*.tfstate.*
-.crash
-.terraform/
-*.tfvars
-override.tf
-override.tf.json
-*_override.tf
-*_override.tf.json
-
-# Ansible
-*.retry
-
-# macOS
-.DS_Store
-
-# Linux
-*~
-
-# Windows
-Thumbs.db
-ehthumbs.db
-Desktop.ini
-
-# Arquivos de teste e cobertura
-coverage/
-.nyc_output/
-lcov-report/
-
-# Arquivos de CI/CD
-.env
-.secrets/
-*.pem
-*.key
-*.crt
-
-# Outros
-*.sqlite
-*.db
-*.tar.gz
-*.tgz
-*.zip
-*.7z
-*.rar
-
-# Logs e relatórios
-*.log
-logs/
-*.out
-
-# Arquivos temporários
-tmp/
-temp/
-.cache/
-.cache-loader/
-bower_components/
-
-/src/generated
+# Diagnostic reports (https://nodejs.org/api/report.html)
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
