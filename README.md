@@ -1,7 +1,7 @@
 <h1 align="center">CODING QUEST</h1>
 
 <p align="center">
-    <img src="https://skillicons.dev/icons?i=nodejs,typescript,nest" />
+    <img src="https://skillicons.dev/icons?i=nodejs,typescript,nest,mysql,prisma" />
 </p>
 <div align="center">
   Um projeto NodeJS, Typescript e Nest!
@@ -17,7 +17,8 @@
 O projeto ainda está em desenvolvimento e as próximas atualizações serão voltadas para as seguintes tarefas:
 
 - [x] Refatorar estrutura do projeto para Nest e Typescript
-- [ ] Refatorar Modulo Auth
+- [x] Criar Modulo User
+- [ ] Criar Modulo Auth
 - [ ] Refatorar Modulo Correção de desafios
 
 ## 💻 Pré-requisitos
