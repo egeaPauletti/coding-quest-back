@@ -18,7 +18,7 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
 
 - [x] Refatorar estrutura do projeto para Nest e Typescript
 - [x] Criar Modulo User
-- [ ] Criar Modulo Auth
+- [x] Criar Modulo Auth
 - [ ] Refatorar Modulo Correção de desafios
 
 ## 💻 Pré-requisitos
