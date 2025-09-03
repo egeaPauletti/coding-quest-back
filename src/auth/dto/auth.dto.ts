@@ -1,4 +1,9 @@
-export class AuthDto{
-    email: string;
-    password: string;
+import { IsNotEmpty, IsString } from 'class-validator';
+export class AuthDto {
+  @IsString()
+  @IsNotEmpty()
+  email: string;
+  @IsString()
+  @IsNotEmpty()
+  password: string;
 }

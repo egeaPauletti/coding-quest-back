@@ -1,4 +1,8 @@
-import { Injectable, NotFoundException, UnauthorizedException } from '@nestjs/common';
+import {
+  Injectable,
+  NotFoundException,
+  UnauthorizedException,
+} from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import * as bcrypt from 'bcrypt';
 import { PrismaService } from 'src/database/prisma.service';
@@ -6,41 +10,39 @@ import { AuthDto } from './dto/auth.dto';
 
 @Injectable()
 export class AuthService {
-    constructor(
-        private readonly prisma :PrismaService , 
-        private readonly jwtService: JwtService
-    ){}
+  constructor(
+    private readonly prisma: PrismaService,
+    private readonly jwtService: JwtService,
+  ) {}
 
-    async findOne(data: AuthDto){
-              return this.prisma.user.findUnique({
-                where: { email: data.email }
-              })
-        }
+  async findByEmail(data: AuthDto) {
+    return this.prisma.user.findUnique({
+      where: { email: data.email },
+    });
+  }
 
-    async signIn(data: AuthDto) {
-    const user = await this.findOne(data);
+  async signIn(data: AuthDto) {
+    const user = await this.findByEmail(data);
 
     // Verifica se o usuário existe
     if (!user) {
-        throw new NotFoundException('Usuário não encontrado')
+      throw new NotFoundException('Usuário não encontrado');
     }
 
     // Compara a senha enviada com o hash no banco
     const isPasswordValid = await bcrypt.compare(data.password, user.password);
 
     if (!isPasswordValid) {
-        throw new UnauthorizedException('Senha inválida');
+      throw new UnauthorizedException('Senha inválida');
     }
 
+    const payload = { sub: user.id, email: user.email };
 
-    const payload = { sub: user.id, username: user.username };
-    
-    const accessToken = await this.jwtService.signAsync(payload)
-    // console.log('Login bem-sucedido:', user , "\n",{Token: accessToken})
+    const accessToken = await this.jwtService.signAsync(payload);
+    console.log('Login bem-sucedido:', user, '\n', { Token: accessToken });
 
     return {
-      accessToken
+      accessToken,
     };
-
-}
+  }
 }
