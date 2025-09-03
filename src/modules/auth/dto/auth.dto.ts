@@ -7,3 +7,12 @@ export class AuthDto {
   @IsNotEmpty()
   password: string;
 }
+
+export class JwtPayload {
+  @IsString()
+  sub: string;
+  @IsString()
+  email: string;
+  @IsString()
+  role?: string;
+}
