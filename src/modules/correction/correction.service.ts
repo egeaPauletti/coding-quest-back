@@ -1,6 +1,6 @@
 import { Injectable, InternalServerErrorException } from '@nestjs/common';
-import { PrismaService } from '../modules/database/prisma.service';
 import OpenAI from 'openai';
+import { PrismaService } from '../database/prisma.service';
 
 @Injectable()
 export class CorrectionService {

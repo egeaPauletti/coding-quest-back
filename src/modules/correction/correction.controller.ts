@@ -1,6 +1,6 @@
-import { Controller, Post, Body } from '@nestjs/common';
-import { CorrectionService } from './correction.service';
+import { Body, Controller, Post } from '@nestjs/common';
 import { IsString } from 'class-validator';
+import { CorrectionService } from './correction.service';
 
 export class CreateCorrectionDto {
   @IsString()
@@ -18,7 +18,7 @@ export class CreateCorrectionDto {
 
 @Controller('correction')
 export class CorrectionController {
-  constructor(private readonly correctionService: CorrectionService) {}
+  constructor(private readonly correctionService: CorrectionService) { }
 
   @Post()
   async createCorrection(@Body() body: CreateCorrectionDto) {
