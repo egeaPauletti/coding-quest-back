@@ -1,0 +1,24 @@
+services:
+  back:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: codingquest-back
+    environment:
+      - PORT=${PORT:-4000}
+      - DATABASE_URL=${DATABASE_URL}
+      - JWT_SECRET=${JWT_SECRET}
+      - JWT_EXPIRESIN=${JWT_EXPIRESIN:-7d}
+    networks:
+      - proxy-network
+      - db-network
+    restart: unless-stopped
+
+    command: sh -c "npx prisma migrate deploy && npm run start:prod"
+
+networks:
+  proxy-network:
+    external: true
+  db-network:
+    external: true
+
